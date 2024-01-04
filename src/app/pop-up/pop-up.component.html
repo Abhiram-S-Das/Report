@@ -1,0 +1,17 @@
+<h2>Recovery Status</h2>
+
+<div class="dropdown">
+  <mat-form-field>
+    <mat-select placeholder="District" [(ngModel)]="selectedDistrict" (ngModelChange)="onDistrictSelected()">
+      <mat-option *ngFor="let place of places" [value]="place">
+        {{ place }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="districtData">
+
+    <button>Recovered: {{ districtData.recovered }}</button>
+
+  </div>
+</div>
